@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --dark-one: #0D0C1D;
+    --dark-two: #161B33;
+    --main-color: #474973;
+    --main-color-two: #55588B;
+    --light-one: #fff;
+    --light-two: #F5F4F6;
+}
+
+/* General Styles */
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, button, input, textarea {
+    font-family: "Poppins", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+}
+
+.text {
+    font-size: 1.25rem;
+    color: var(--dark-two);
+    line-height: 1.6;
+}
+
+.image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    position: relative;
+    z-index: 5;
+    max-width: 92rem;
+    margin: 0 auto;
+    padding: 0 4rem;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.z-index {
+    position: relative;
+    z-index: 2;
+}
+
+/* End General Styles */
+
+/* Header */
+
+header {
+    width: 100%;
+    background-color: var(--light-two);
+    overflow: hidden;
+    position: relative;
+    height: 100vh;
+}
+
+nav {
+    width: 100%;
+    position: relative;
+    z-index: 50;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.links ul {
+    display: flex;
+}
+
+.links a {
+    display: inline-block;
+    padding: .9rem 1.2rem;
+    color: var(--dark-one);
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 1;
+    transition: 0.3s;
+}
+
+.links a.active {
+    background-color: var(--main-color);
+    color: var(--light-one);
+    border-radius: 2rem;
+    font-size: 1rem;
+    padding: 0.9rem 2.1rem;
+    margin-left: 1rem;
+}
+
+.links a:hover{
+    color: var(--main-color-two);
+}
+
+.links a.active:hover{
+    color: var(--light-one);
+    background-color: var(--main-color-two);
+}
+
+.header-content .container.grid-2 {
+    grid-template-columns: 2.5fr 3.5fr;
+    min-height: calc(100vh - 6rem);
+    padding-bottom: 2.5rem;
+    text-align: left;
+}
+
+.header-content {
+    font-size: 3.8rem;
+    line-height: 0.8;
+    color: var(--dark-one);
+}
+
+.header-content .text{
+    margin: 2.15rem 0;
+}
+
+.header-content .image .img-element {
+    max-width: 750px;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}
+
+.overlay .shape {
+    width: initial;
+    opacity: 0.23;
+    position: absolute;
+}
+
+.overlay.overlay-lg .shape {
+    height: 150px;
+}
+
+header .sugar1 {
+    top: 62%;
+    left: 87%;
+}
+
+header .sugar2 {
+    top: 12%;
+    right: 82%;
+}
+
+header .dan1 {
+    top: 78%;
+    right: 71%
+}
+
+header .dan2 {
+    top: 25%;
+    left: 43%;
+}
+
+/*
+.letters {
+    position: absolute;
+    width: 25%;
+    top: -5px;
+    left: -100px;
+    opacity: 0.06;
+} */
+
+/* End Header */
