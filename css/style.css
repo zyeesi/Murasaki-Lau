@@ -61,6 +61,15 @@ img {
     background-color: var(--main-color-two);
 }
 
+.btn.small {
+    position: absolute;
+    padding: 0.7rem 1.8rem;
+    font-size: 1rem;
+    left: 50%;
+    top: 87%;
+    transform: translateX(-50%);
+}
+
 .container {
     position: relative;
     z-index: 5;
@@ -102,12 +111,15 @@ img {
 }
 
 .section {
-    padding: 7rem 0;
+    padding: 5rem 0 7rem 0;
 }
 
 .section-header {
     text-align: center;
     margin-bottom: 1.5rem;
+}
+
+.section-header .text {
     max-width: 600px;
     margin: 0 auto;
 }
@@ -244,6 +256,11 @@ header .sugar2 {
     right: 82%;
 }
 
+header .sugar3 {
+    top: 80%;
+    left: 54%;
+}
+
 header .dan1 {
     top: 78%;
     right: 71%
@@ -254,9 +271,19 @@ header .dan2 {
     left: 43%;
 }
 
+header .dan3 {
+    top: 14%;
+    right: 12%
+}
+
 /* End Header */
 
 /* Services */
+
+.services {
+    background-color: var(--light-two);
+    background-image: url("https://www.transparenttextures.com/patterns/food.png");
+}
 
 .cards {
     display: flex;
@@ -283,6 +310,7 @@ header .dan2 {
     padding: 3rem 2rem;
     overflow: hidden;
     transition: 0.3s;
+    box-shadow: 9px 9px 5px #ccc;
 }
 
 .card:before {
@@ -329,13 +357,97 @@ header .dan2 {
     margin: 1.2rem 0;
 }
 
-.btn.small {
-    position: absolute;
-    padding: 0.7rem 1.8rem;
-    font-size: 1rem;
-    left: 50%;
-    top: 87%;
-    transform: translateX(-50%);
+/* End Services */
+
+/* Portfolio */
+
+.portfolio {
+    position: relative;
+    width: 100%;
+    background-color: var(--light-two);
+    min-height: 1200px;
 }
 
-/* End Services */
+.background-bg {
+    position: absolute;
+    width: 100%;
+    height: 520px;
+    top: 0;
+    left: 0;
+    background-color: var(--main-color);
+}
+
+.portfolio .title, .portfolio .title:before {
+    color: var(--light-one);
+}
+
+.portfolio .title::after {
+    background-color: var(--light-one);
+}
+
+.filter {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    margin: 0.45rem 0.4rem;
+    padding: 0.85rem 1.8rem;
+    color: var(--light-one);
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+    border-radius: 2rem;
+    transition: 0.3s;
+}
+
+.filter-btn.active {
+    background-color: var(--light-one);
+    color: var(--main-color);
+}
+
+.overlay.overlay-sm .shape {
+    filter: brightness(50) invert(1);
+    opacity: 0.15;
+    width: 150px;
+}
+
+.portfolio .sugar1 {
+    top: 18%;
+    left: 12%;
+}
+
+.portfolio .sugar2 {
+    top: 60%;
+    right: 14%;
+}
+
+.portfolio .sugar3 {
+    top: 70%;
+    left: 40%;
+}
+
+.portfolio .dan1 {
+    top: 8%;
+    right: 35%;
+}
+
+.portfolio .dan2 {
+    top: 80%;
+    left: 5%;
+}
+
+.portfolio .dan3 {
+    top: -5%;
+    right: 8%;
+}
+
+/* End Portfolio */
