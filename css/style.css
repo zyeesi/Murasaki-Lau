@@ -4,7 +4,8 @@
     --dark-one: #0D0C1D;
     --dark-two: #161B33;
     --main-color: #474973;
-    --main-color-two: #55588B;
+    /* --main-color-two: #55588B; */
+    --main-color-two: #676AA2;
     --light-one: #fff;
     --light-two: #F5F4F6;
 }
@@ -272,7 +273,7 @@ header .dan2 {
 }
 
 header .dan3 {
-    top: 14%;
+    top: 7%;
     right: 12%
 }
 
@@ -282,7 +283,7 @@ header .dan3 {
 
 .services {
     background-color: var(--light-two);
-    background-image: url("https://www.transparenttextures.com/patterns/food.png");
+    background-image: url("../img/background/food.png");
 }
 
 .cards {
@@ -310,7 +311,8 @@ header .dan3 {
     padding: 3rem 2rem;
     overflow: hidden;
     transition: 0.3s;
-    box-shadow: 9px 9px 5px #ccc;
+    box-shadow: rgba(22, 27, 51, 0.25) 0px 0.0625em 0.0625em, rgba(22, 27, 51, 0.25) 0px 0.125em 0.5em, rgba(85, 88, 139, 0.1) 0px 0px 0px 1px inset;
+    /* box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px; */
 }
 
 .card:before {
@@ -359,7 +361,7 @@ header .dan3 {
 
 /* End Services */
 
-/* Portfolio */
+/* Portfolio 
 
 .portfolio {
     position: relative;
@@ -451,3 +453,106 @@ header .dan3 {
 }
 
 /* End Portfolio */
+
+/* About */
+
+.about {
+    position: relative;
+    width: 100%;
+    padding: 13.5rem 0 8.5rem 0;
+    background-color: var(--main-color);
+}
+
+.about-box {
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--light-one);
+    border-radius: 45px;
+    padding: 3.5rem 4.5rem;
+    display: grid;
+    grid-template-columns: 4.5fr 1.5fr;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.about-box .title:after {
+    left:0%;
+    transform: translateX(0);
+}
+
+.portrait-info {
+    width: 100%;
+    margin: 1rem;
+}
+
+.portrait-info .text{
+    margin: 1.5rem 0 0 0;
+}
+
+.portrait-filter {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.filter-btn {
+    border: none;
+    display: block;
+    outline: none;
+    width: 10rem;
+    margin: 1rem auto;
+    background-color: var(--main-color);
+    cursor: pointer;
+    border-radius: 2rem;
+    transition: 0.3s;
+    box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
+    /* transform-origin: center; */
+}
+
+.filter-btn:hover {
+    background-color: var(--main-color-two);
+    /* transform: scale(1.1); */
+}
+
+.filter-btn.active {
+    background-color: var(--main-color-two);
+}
+
+.overlay.overlay-sm .shape {
+    filter: brightness(50) invert(1);
+    opacity: 0.15;
+    width: 150px;
+}
+
+.about .sugar1 {
+    top: 14%;
+    left: 9%;
+}
+
+.about .sugar2 {
+    top: 87%;
+    right: 14%;
+}
+
+.about .sugar3 {
+    top: 82%;
+    left: 24%;
+}
+
+.about .dan1 {
+    top: 11%;
+    right: 35%;
+}
+
+.about .dan2 {
+    top: 67%;
+    left: 5%;
+}
+
+.about .dan3 {
+    top: 47%;
+    right: 8%;
+}
+
+/* End About */
