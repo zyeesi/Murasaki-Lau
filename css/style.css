@@ -489,6 +489,18 @@ header .dan3 {
     margin: 1.5rem 0 0 0;
 }
 
+.human-info {
+    display: block;
+}
+
+.cat-info {
+    display: none;
+}
+
+.dog-info {
+    display: none;
+}
+
 .portrait-filter {
     width: 100%;
     align-items: center;
