@@ -994,6 +994,11 @@ footer {
         margin: 0 auto;
     }
 
+    header .column-2 {
+        /* shitty way to push image up*/
+        padding-bottom: 5rem;
+    }
+
     header .links {
         position: fixed;
         width: 100%;
@@ -1040,10 +1045,8 @@ footer {
     }
 
     .card {
-        min-width: 300px;
-        max-width: 300px;
-        min-height: 420px;
-        max-height: 420px;
+        min-width: 320px;
+        max-width: 320px;
     }
     
     .card:before {
@@ -1052,7 +1055,7 @@ footer {
     }
     
     .icon {
-        width: 180px;
+        width: 220px;
     }
 
     /* End Service responsive */
