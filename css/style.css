@@ -3,6 +3,7 @@
 :root {
     --dark-one: #0D0C1D;
     --dark-two: #161B33;
+    --dark-three: #7b7b7b;
     --main-color: #474973;
     /* --main-color-two: #55588B; */
     --main-color-two: #676AA2;
@@ -16,6 +17,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body, button, input, textarea {
@@ -79,6 +84,11 @@ img {
     padding: 0 4rem;
 }
 
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+}
+
 .grid-2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -105,9 +115,6 @@ img {
     width: initial;
     opacity: 0.23;
     position: absolute;
-}
-
-.overlay.overlay-lg .shape {
     height: 150px;
 }
 
@@ -172,7 +179,6 @@ header {
     background-color: var(--light-two);
     overflow: hidden;
     position: relative;
-    height: 100vh;
 }
 
 nav {
@@ -226,9 +232,69 @@ nav .container {
     background-color: var(--main-color-two);
 }
 
+.hamburger-menu {
+    width: 2.7rem;
+    height: 3rem;
+    z-index: 100;
+    position: relative;
+    display: none;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.hamburger-menu .bar {
+    position: relative;
+    width: 1.9rem;
+    height: 3px;
+    border-radius: 3px;
+    background-color: var(--main-color);
+    transition: 0.5s;
+}
+
+.bar:before, .bar:after {
+    content: "";
+    position: absolute;
+    width: 1.9rem;
+    height: 3px;
+    border-radius: 3px;
+    background-color: var(--main-color);
+    transition: 0.5s;
+    
+}
+
+.bar:before {
+    transform: translateY(-9px);
+}
+
+.bar:after {
+    transform: translateY(9px);
+}
+
+.header-title {
+    font-size: 4.5rem;
+}
+
+nav.open .hamburger-menu .bar {
+    background-color: transparent;
+    transform: rotate(360deg);
+
+}
+
+nav.open .hamburger-menu .bar:before {
+    transform: translateY(0) rotate(45deg);
+}
+
+nav.open .hamburger-menu .bar:after {
+    transform: translateY(0) rotate(-45deg);
+}
+
+nav.open .links{
+    transform: translateX(0);
+}
+
 .header-content .container.grid-2 {
     grid-template-columns: 2.5fr 3.5fr;
-    min-height: calc(100vh - 6rem);
+    min-height: 100vh;
     padding-bottom: 2.5rem;
     text-align: left;
 }
@@ -244,7 +310,7 @@ nav .container {
 }
 
 .header-content .image .img-element {
-    max-width: 750px;
+    max-width: 550px;
 }
 
 header .sugar1 {
@@ -268,8 +334,8 @@ header .dan1 {
 }
 
 header .dan2 {
-    top: 25%;
-    left: 43%;
+    top: 18.8%;
+    right: 57%;
 }
 
 header .dan3 {
@@ -288,7 +354,7 @@ header .dan3 {
 
 .cards {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     width: 100%;
 }
@@ -454,7 +520,7 @@ header .dan3 {
 
 /* End Portfolio */
 
-/* About */
+/* About 
 
 .about {
     position: relative;
@@ -466,7 +532,7 @@ header .dan3 {
 .about-box {
     width: 100%;
     overflow: hidden;
-    background-color: var(--light-one);
+    background-color: var(--light-two);
     border-radius: 45px;
     padding: 3.5rem 4.5rem;
     display: grid;
@@ -517,14 +583,18 @@ header .dan3 {
     background-color: var(--main-color);
     cursor: pointer;
     border-radius: 2rem;
-    transition: 0.3s;
+    transition: 0.1s;
     box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
-    /* transform-origin: center; */
+    transform-origin: center;
 }
 
 .filter-btn:hover {
     background-color: var(--main-color-two);
-    /* transform: scale(1.1); */
+    transform: scale(1.1);
+}
+
+.filter-btn:active {
+    transform: scale(1.05);
 }
 
 .filter-btn.active {
@@ -568,3 +638,529 @@ header .dan3 {
 }
 
 /* End About */
+
+/* Hire me */
+
+.hireme{
+    position: relative;
+    padding: 5rem 0 10rem 0;
+    background-color: var(--light-two);
+}
+
+.hireme .container {
+    text-align: center;
+}
+
+.hireme .text {
+    padding-bottom: 1rem;
+}
+
+.hireme .dan1 {
+    top: 75%;
+    left: 72%;
+}
+
+.hireme .dan2 {
+    top: -7%;
+    right: 66%;
+}
+
+.hireme .sugar1 {
+    top: 59%;
+    right: 81%;
+}
+
+.hireme .sugar2 {
+    top: 20%;
+    left: 78%;
+}
+
+/* End Hire me */
+
+/* Footer */
+
+footer {
+    background-color: #222;
+    padding: 5rem 0;
+}
+
+.footer .grid-3 {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+}
+
+.grid-3-col {
+    padding: 0 1.7rem;
+}
+
+.footer .title-sm {
+    font-size: 1.4rem;
+
+    color: var(--light-two);
+    margin-bottom: 0.9rem;
+}
+
+.footer .text {
+    color: #aaa;
+    font-size: 1.1rem;
+}
+
+.footer-links a {
+    color: #888;
+    font-size: 1.15rem;
+    display: inline-block;
+    margin-bottom: 0.4rem;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--main-color);
+}
+
+.bottom-footer {
+    margin-top: 4.5rem;
+    padding-left: 1.7rem;
+    padding-right: 2.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.copyright .text {
+    color: var(--dark-three);
+    font-size: 1.1rem;
+    display: inline-block;
+    text-align: center;
+}
+
+.copyright .text span {
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+.followme-wrap {
+    display: flex;
+}
+
+.followme {
+    display: flex;
+    align-items: center;
+}
+
+.followme h3 {
+    color: var(--dark-three);
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+
+.followme .footer-line {
+    width: 60px;
+    height: 2px;
+    background-color: var(--dark-three);
+    margin: 0 1.2rem;
+    display: inline-block;
+}
+
+.social-media a{
+    color: var(--dark-three);
+    font-size: 1.3rem;
+    margin-right: 0.4rem;
+    transition: 0.3s;
+}
+
+.social-media a:hover{
+    color: var(--main-color);
+}
+
+/* End Footer */
+
+/* Responsive */
+@media (max-width: 1280px) {
+
+    header .sugar1 {
+        top: 527px;
+        left: 1116.3px;
+    }
+    
+    header .sugar2 {
+        top: 102px;
+        right: 1050px;
+    }
+    
+    header .sugar3 {
+        top: 680px;
+        left: 692px;
+    }
+    
+    header .dan1 {
+        top: 663px;
+        right: 909px
+    }
+    
+    header .dan2 {
+        display: none;
+    }
+    
+    header .dan3 {
+        top: 59.5px;
+        left: 976.4px;
+    }
+}
+
+@media (max-width: 900px) {
+
+    /* General responsive */
+
+    .header-title {
+        font-size: 3.7rem;
+    }
+
+    .title {
+        padding-bottom: 1rem;
+        line-height: 1;
+        font-size: 2.5rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    .title:before {
+        font-size: 0.95rem;
+    }
+    
+    .title:after {
+        width: 70px;
+    }
+    
+    .title-sm {
+        font-size: 1.3rem;
+    }
+    
+    .text {
+        font-size: 1.05rem;
+    }
+
+    .btn {
+        padding: 0.85rem 2rem;
+        font-size: 0.95rem;
+    }
+    
+    .btn.small {
+        padding: 0.75rem 1.7rem;
+        font-size: 0.9rem;
+    }
+
+    /* End General responsive */
+
+    /* Service responsive */
+
+    .card .text {
+        font-size: 1.05rem;
+    }
+
+    .card {
+        min-width: 370px;
+        max-width: 370px;
+        min-height: 480px;
+    }
+    
+    .card:before {
+        right: -145px;
+        font-size: 5.8rem;
+    }
+    
+    .icon {
+        width: 230px;
+    }
+
+    /* End Service responsive */
+
+    /* Hire me responsive */
+
+    .hireme .dan1 {
+        top: 327px;
+        left: 648px;
+    }
+    
+    .hireme .dan2 {
+        top: -30.5px;
+        right: 594px;
+    }
+    
+    .hireme .sugar1 {
+        top: 257px;
+        right: 729px;
+    }
+    
+    .hireme .sugar2 {
+        top: 87px;
+        left: 702px;
+    }
+
+    /* End Hire me responsive */
+
+    /* Footer responsive */
+
+    .footer .title-sm {
+        font-size: 1.2rem;
+    }
+    
+    .footer .text {
+        font-size: 0.9rem;
+    }
+
+    .footer-links a {
+        font-size: 1rem;
+    }
+
+    .copyright .text {
+        font-size: 0.9rem;
+        padding-right: 1rem;
+    }
+
+    .followme h3 {
+        font-size: 1.1rem;
+    }
+    
+    
+    .social-media a{
+        font-size: 1.1rem;
+    }
+
+    /* End Footer responsive */
+}
+
+@media (max-width: 778px) {
+
+    /* General responsive */
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .title {
+        padding-bottom: 1rem;
+        line-height: 1;
+        font-size: 2.3rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    .title:before {
+        font-size: 0.95rem;
+    }
+    
+    .title:after {
+        width: 70px;
+    }
+    
+    .title-sm {
+        font-size: 1.2rem;
+    }
+    
+    .text {
+        font-size: 1.05rem;
+    }
+
+    .btn {
+        padding: 0.85rem 2rem;
+        font-size: 0.9rem;
+    }
+    
+    .btn.small {
+        padding: 0.75rem 1.7rem;
+        font-size: 0.85rem;
+    }
+
+    /* End General responsive */
+
+    /* Header responsive */
+    
+    .header-title {
+        font-size: 2.9rem;
+    }
+
+    header .container {
+        padding: 0 2rem;
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr !important;
+        gap: 0rem;
+    }
+
+    header .column-1 {
+        margin: 0 auto;
+    }
+
+    header .links {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        right: 0;
+        background-color: var(--dark-two);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        transform: translateX(100%);
+        transition: 0.5s;
+        opacity: 0.99;
+    }    
+
+    .links ul {
+        flex-direction: column;
+    }
+
+    .links a {
+        color: var(--light-two);
+    }
+
+    .links a.active {
+        margin-left: 0;
+        margin: 0.5rem 0;
+    }
+
+    .header-content .image .img-element {
+        max-width: 450px;
+        margin: 0 auto;
+    }
+
+    .header-content .text {
+        margin-bottom: 0;
+    }
+
+    /* Service responsive */
+
+    .card .text {
+        font-size: 0.9rem;
+    }
+
+    .card {
+        min-width: 300px;
+        max-width: 300px;
+        min-height: 420px;
+        max-height: 420px;
+    }
+    
+    .card:before {
+        right: -145px;
+        font-size: 5.8rem;
+    }
+    
+    .icon {
+        width: 180px;
+    }
+
+    /* End Service responsive */
+
+    /* Hire me responsive */
+
+    .hireme .dan1 {
+        top: 327px;
+        left: 648px;
+    }
+    
+    .hireme .dan2 {
+        top: -30.5px;
+        right: 594px;
+    }
+    
+    .hireme .sugar1 {
+        top: 257px;
+        right: 729px;
+    }
+    
+    .hireme .sugar2 {
+        top: 87px;
+        left: 702px;
+    }
+
+    /* End Hire me responsive */
+
+    /* Footer responsive */
+
+    .footer {
+        padding: 3rem 0;
+    }
+
+    .footer .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 500px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .footer-about {
+        grid-column: 1/3;
+    }
+
+    .grid-3-col {
+        margin: 1rem 0;
+        padding: 0;
+    }
+
+    .bottom-footer {
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+        padding: 1.5rem 0 0 0;
+        margin-top: 2.5rem;
+        position: relative;
+    }
+
+    .bottom-footer:before {
+        content: "";
+        position: absolute;
+        width: 90%;
+        max-width: 500px;
+        height: 1px;
+        background-color: var(--dark-three);
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+
+    .footer .title-sm {
+        font-size: 1rem;
+    }
+    
+    .footer .text {
+        font-size: 0.9rem;
+    }
+
+    .footer-links a {
+        font-size: 0.9rem;
+    }
+
+    .copyright .text {
+        font-size: 0.8rem;
+        padding-right: 1rem;
+    }
+
+    .bottom-footer {
+        margin-top: 2.5rem;
+    }
+
+    .followme h3 {
+        font-size: 1rem;
+    }
+    
+    .social-media a{
+        font-size: 1.1rem;
+    }
+
+    /* End Footer responsive */
+}
+
+@media (max-width: 400px) {
+    header .container {
+        padding: 0 1rem;
+    }
+}
+
+/* End Responsive */
