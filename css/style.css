@@ -774,6 +774,49 @@ footer {
 
 /* End Footer */
 
+/* Portraits */
+
+.portraits {
+    position: relative;
+    width: 100%;
+    background-color: var(--light-two);
+    background-image: url("../img/background/food.png");
+}
+
+.portraits .section-header {
+    padding: 1.5rem 0;
+}
+
+.grid {
+    width: 100%;
+    margin: 1.5rem 0;
+}
+
+.grid-item {
+    width: 33.33%;
+    padding: 1rem 1.2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.gallery-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    max-height: 410px;
+    width: 100%;
+    background-color: var(--light-two);
+    box-shadow: rgba(22, 27, 51, 0.25) 0px 0.0625em 0.0625em, rgba(22, 27, 51, 0.25) 0px 0.125em 0.5em, rgba(85, 88, 139, 0.1) 0px 0px 0px 1px inset;
+    transition: 0.3s;
+}
+
+.gallery-image:hover{
+    transform: scale(1.1);
+}
+
+/* End Portraits */
+
+
 /* Responsive */
 @media (max-width: 1280px) {
 
@@ -928,7 +971,7 @@ footer {
     /* End Footer responsive */
 }
 
-@media (max-width: 778px) {
+@media (max-width: 800px) {
 
     /* General responsive */
 
@@ -1084,6 +1127,28 @@ footer {
 
     /* End Hire me responsive */
 
+    /* Portraits responsive */
+
+    .grid {
+        width: 100%;
+        margin: 1.5rem 0;
+    }
+    
+    .grid-item {
+        width: 50%;
+        padding: 5px 5px;
+    }
+    
+    .gallery-image {
+        border-radius: 0px;
+    }
+
+    .gallery-image img{
+        transform: translateY(10%) scale(1.2);
+    }
+    
+    /* Portraits responsive */
+    
     /* Footer responsive */
 
     .footer {

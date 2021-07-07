@@ -28,3 +28,11 @@ function closeMenu() {
 }
 
 links.forEach( link => link.addEventListener("click", () => closeMenu()));
+
+var $container = $('.grid');
+$container.imagesLoaded( function() {
+    $container.isotope({
+        itemSelector: '.grid-item',
+        layoutMode: 'fitRows'
+    });
+});
