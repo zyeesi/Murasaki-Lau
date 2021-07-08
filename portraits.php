@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/> <!-- Font Awesome Icons -->
     </head>
     <body>
+        <main>
         <header id="header">
             <nav>
                 <div class="container">
@@ -38,32 +39,40 @@
                     </div>
                 </div>
             </nav>
+        </header>
 
-            <div class="portraits">
-                <div class="container">
-                    <div class="section-header">
-                        <h3 class="title" data-title="My Previous Works">Portraits</h3>
-                    </div>
-                    <div class="grid portrait-gallery">
-                        <?php
-                            $dir_name = "img/portfolio/portraits/";
-                            $images = glob($dir_name."*.png");
-                            natsort($images);
-                            foreach(array_reverse($images, false) as $image) {
-                                echo '
-                                    <div class="grid-item">
-                                        <div class="gallery-image">
-                                            <a href="'.$image.'" data-lightbox="portraits">
-                                            <img src="'.$image.'"alt=""></a>
-                                        </div>
+        <section class="portraits">
+            <div class="container">
+                <div class="section-header">
+                    <h3 class="title" data-title="My Previous Works">Portraits</h3>
+                </div>
+                <div class="grid portrait-gallery">
+                    <?php
+                        $dir_name = "img/portfolio/portraits/";
+                        $images = glob($dir_name."*.png");
+                        natsort($images);
+                        $rev_images = array_reverse($images, false);
+                        $sliced_images = array_slice($rev_images, 0, 6);
+
+                        foreach($sliced_images as $image) {
+                            echo '
+                                <div class="grid-item">
+                                    <div class="gallery-image">
+                                        <a href="'.$image.'" data-lightbox="portraits">
+                                        <img src="'.$image.'"alt=""></a>
                                     </div>
-                                    ';
-                            }
-                        ?>
-                    </div>
+                                </div>
+                                ';
+                        }
+                    ?>
+                </div>
+                <div class="section-footer">
+                    <a class="loadmore btn">Load More</a>
                 </div>
             </div>
-        </header>
+        </section>
+
+        </main>
 
         <footer class="footer">
             <div class="container">

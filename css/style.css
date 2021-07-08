@@ -802,7 +802,7 @@ footer {
 .gallery-image {
     position: relative;
     overflow: hidden;
-    border-radius: 16px;
+    border-radius: 8px;
     max-height: 410px;
     width: 100%;
     background-color: var(--light-two);
@@ -812,6 +812,15 @@ footer {
 
 .gallery-image:hover{
     transform: scale(1.1);
+}
+
+.section-footer {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.loadmore {
+    cursor: pointer;
 }
 
 /* End Portraits */

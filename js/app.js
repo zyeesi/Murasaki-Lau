@@ -1,8 +1,11 @@
-const filter_btns = document.querySelectorAll(".filter-btn");
-const hamburger_menu = document.querySelector(".hamburger-menu");
-const navbar = document.querySelector("header nav");
-const links = document.querySelectorAll(".links a");
+// const filter_btns = document.querySelectorAll(".filter-btn");
+var $hamburger_menu = $('.hamburger-menu');
+var $navbar = $('header nav');
+var $links = $('.links a');
+var $container = $(".grid");
+var loadpage = 1;
 
+/*
 filter_btns.forEach( btn => btn.addEventListener("click", () => {
     filter_btns.forEach(button => button.classList.remove("active"));
     btn.classList.add("active");
@@ -12,27 +15,51 @@ filter_btns.forEach( btn => btn.addEventListener("click", () => {
     let filterValue = btn.dataset.filter;
     $(filterValue).css('display', 'block');
 }));
+*/
 
-hamburger_menu.addEventListener("click", () => {
-    if(!navbar.classList.contains("open")){
-        navbar.classList.add("open");
-        document.body.classList.add("stop-scrolling");
+$hamburger_menu.on('click', function() {
+    if(!$navbar.hasClass("open")){
+        $navbar.addClass("open");
+        $('body').addClass("stop-scrolling");
     } else {
         closeMenu();
     }
 });
 
+$links.each(function() {
+    $(this).on('click', function(){
+        closeMenu();
+    });
+});
+
 function closeMenu() {
-    navbar.classList.remove("open");
-    document.body.classList.remove("stop-scrolling");
+    $navbar.removeClass("open");
+    $('body').removeClass("stop-scrolling");
 }
 
-links.forEach( link => link.addEventListener("click", () => closeMenu()));
-
-var $container = $('.grid');
 $container.imagesLoaded( function() {
     $container.isotope({
-        itemSelector: '.grid-item',
-        layoutMode: 'fitRows'
+        itemSelector: ".grid-item",
+        layoutMode: "fitRows"
     });
+});
+
+$('.loadmore').on('click', function(){
+    $.ajax({
+        url: "portrait_images.php?page=" + loadpage,
+        type: "get",
+        datatype: "image/png",
+        success: function(data){
+            var $imgs = $(data); // I don't understand why this is needed but otherwise layout is fucked up
+            if ($imgs.length < 11){
+                $('.loadmore').css("display", "none");
+            }
+            $container.append($imgs);
+            $container.imagesLoaded(function(){
+                $container.isotope('appended', $imgs);
+            })
+        },
+        error: function() { alert ("Loading Failed")}
+    });
+    loadpage++;
 });
