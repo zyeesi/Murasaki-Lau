@@ -349,7 +349,8 @@ header .dan3 {
 
 .services {
     background-color: var(--light-two);
-    background-image: url("../img/background/food.png");
+    background-image: url("../img/background/bg.png");
+    background-size: 500px;
 }
 
 .cards {
@@ -780,7 +781,8 @@ footer {
     position: relative;
     width: 100%;
     background-color: var(--light-two);
-    background-image: url("../img/background/food.png");
+    background-image: url("../img/background/bg.png");
+    background-size: 500px;
 }
 
 .portraits .section-header {
